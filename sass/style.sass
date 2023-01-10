@@ -62,6 +62,7 @@ body
 
 .btn
     &:link, &:visited
+        position: relative
         text-transform: uppercase
         text-decoration: none
         font-weight: 600
@@ -77,9 +78,35 @@ body
     &:hover
         transform: translateY(-4px)
         box-shadow: (0px 4px 4px rgba(0, 0, 0, 0.3))
+        &::after
+            opacity: 0
+            transform: scaleX(1.6) scaleY(1.7)
     &:active
         transform: translateY(-2px)
         box-shadow: (0px 4px 4px rgba(0, 0, 0, 0.1))
+    &::after
+        position: absolute
+        top: 0
+        left: 0
+        content: ""
+        background-color: white
+        height: 100%
+        width: 100%
+        display: inline-block
+        border-radius: 50px
+        z-index: -1
+        transition: all .4s
+    &_animation
+        animation: btnToUp .5s ease-out .7s
+        animation-fill-mode: backwards
+
+@keyframes btnToUp
+    0%
+        opacity: 0
+        transform: translateY(100px)
+    100%
+        opacity: 1
+        transform: translateY(0px)
 
 @keyframes leftToRight
     0%
