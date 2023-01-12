@@ -17,17 +17,6 @@ body {
   background: #F7F7F7;
 }
 
-@-webkit-keyframes btnToUp {
-  0% {
-    opacity: 0;
-    transform: translateY(10rem);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0rem);
-  }
-}
-
 @keyframes btnToUp {
   0% {
     opacity: 0;
@@ -38,19 +27,6 @@ body {
     transform: translateY(0rem);
   }
 }
-@-webkit-keyframes leftToRight {
-  0% {
-    opacity: 0;
-    transform: translateX(-10rem);
-  }
-  80% {
-    transform: translateX(1rem);
-  }
-  100% {
-    opacity: 1;
-    transform: translateX(0rem);
-  }
-}
 @keyframes leftToRight {
   0% {
     opacity: 0;
@@ -58,19 +34,6 @@ body {
   }
   80% {
     transform: translateX(1rem);
-  }
-  100% {
-    opacity: 1;
-    transform: translateX(0rem);
-  }
-}
-@-webkit-keyframes rightToLeft {
-  0% {
-    opacity: 0;
-    transform: translateX(10rem);
-  }
-  80% {
-    transform: translateX(-1rem);
   }
   100% {
     opacity: 1;
@@ -110,16 +73,11 @@ body {
   letter-spacing: 1rem;
   text-transform: uppercase;
   margin-bottom: 1rem;
-  -webkit-animation-name: leftToRight;
-          animation-name: leftToRight;
-  -webkit-animation-duration: 2s;
-          animation-duration: 2s;
-  -webkit-animation-timing-function: ease;
-          animation-timing-function: ease;
-  -webkit-animation-delay: 1s;
-          animation-delay: 1s;
-  -webkit-backface-visibility: hidden;
-          backface-visibility: hidden;
+  animation-name: leftToRight;
+  animation-duration: 2s;
+  animation-timing-function: ease;
+  animation-delay: 1s;
+  backface-visibility: hidden;
 }
 .title-first__secondary {
   display: block;
@@ -127,16 +85,11 @@ body {
   font-size: 4rem;
   line-height: 4.8rem;
   letter-spacing: 0.5rem;
-  -webkit-animation-name: rightToLeft;
-          animation-name: rightToLeft;
-  -webkit-animation-duration: 2s;
-          animation-duration: 2s;
-  -webkit-animation-timing-function: ease;
-          animation-timing-function: ease;
-  -webkit-animation-delay: 1s;
-          animation-delay: 1s;
-  -webkit-backface-visibility: hidden;
-          backface-visibility: hidden;
+  animation-name: rightToLeft;
+  animation-duration: 2s;
+  animation-timing-function: ease;
+  animation-delay: 1s;
+  backface-visibility: hidden;
 }
 
 .btn:link, .btn:visited {
@@ -180,18 +133,61 @@ body {
   transition: all 0.4s;
 }
 .btn_animation {
-  -webkit-animation: btnToUp 0.5s ease-out 0.7s;
-          animation: btnToUp 0.5s ease-out 0.7s;
-  -webkit-animation-fill-mode: backwards;
-          animation-fill-mode: backwards;
+  animation: btnToUp 0.5s ease-out 0.7s;
+  animation-fill-mode: backwards;
+}
+
+.row {
+  max-width: 114rem;
+  background: #c79292;
+  margin: 0 auto;
+}
+.row:not(:last-child) {
+  margin-bottom: 8rem;
+}
+.row::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.col-1-of-2 {
+  width: calc((100% - 6rem) / 2);
+}
+
+.col-1-of-3 {
+  width: calc((100% - 2 * 6rem) / 3);
+}
+
+.col-2-of-3 {
+  width: calc(2 * ((100% - 2 * 6rem) / 3) + 6rem);
+}
+
+.col-1-of-4 {
+  width: calc((100% - 3 * 6rem) / 4);
+}
+
+.col-2-of-4 {
+  width: calc(2 * ((100% - 3 * 6rem) / 4) + 6rem);
+}
+
+.col-3-of-4 {
+  width: calc(3 * ((100% - 3 * 6rem) / 4) + 2 * 6rem);
+}
+
+[class^=col-] {
+  background: #9dbb97;
+  float: left;
+}
+[class^=col-]:not(:last-child) {
+  margin-right: 6rem;
 }
 
 .header {
   position: relative;
   height: 95vh;
   background: linear-gradient(90deg, rgba(186, 133, 84, 0.7) 0.03%, rgba(0, 0, 0, 0.7) 99.94%), url(../img/header-background.jpg) center/cover no-repeat;
-  -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 0 80%);
-          clip-path: polygon(0 0, 100% 0, 100% 100%, 0 80%);
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0 80%);
 }
 .header__logo {
   position: absolute;
