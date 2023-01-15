@@ -123,6 +123,9 @@ body {
   letter-spacing: 0.2rem;
   line-height: 140%;
 }
+.paragraph_center {
+  text-align: center;
+}
 
 .text-align-center {
   text-align: center;
@@ -247,6 +250,26 @@ body {
   transform: scale(0.95);
 }
 
+.card {
+  display: flex;
+  padding: 2.5rem;
+  background: rgba(255, 255, 255, 0.8);
+  border-radius: 0.5rem;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0rem 0.4rem 0.4rem rgba(0, 0, 0, 0.3);
+  transition: all 0.4s;
+}
+.card__icon {
+  height: 6.3rem;
+  width: 6.3rem;
+  margin-bottom: 2.5rem;
+}
+.card:hover {
+  transform: translateY(-1.5rem);
+}
+
 .row {
   max-width: 114rem;
   margin: 0 auto;
@@ -315,4 +338,10 @@ body {
 
 .section-about {
   padding-top: 8rem;
+}
+
+.section-cards {
+  background: linear-gradient(90deg, rgba(186, 133, 84, 0.7) 0.03%, rgba(0, 0, 0, 0.7) 99.94%), url(../img/background-section-two.jpg) center/cover no-repeat;
+  clip-path: polygon(0 0, 100% 15%, 100% 100%, 0 85%);
+  padding: 21rem 0;
 }/*# sourceMappingURL=style.css.map */
