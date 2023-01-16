@@ -15,17 +15,8 @@ body {
 
 .container {
   background: #F7F7F7;
-}
-
-@-webkit-keyframes btnToUp {
-  0% {
-    opacity: 0;
-    transform: translateY(10rem);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0rem);
-  }
+  position: relative;
+  z-index: 0;
 }
 
 @keyframes btnToUp {
@@ -38,19 +29,6 @@ body {
     transform: translateY(0rem);
   }
 }
-@-webkit-keyframes leftToRight {
-  0% {
-    opacity: 0;
-    transform: translateX(-10rem);
-  }
-  80% {
-    transform: translateX(1rem);
-  }
-  100% {
-    opacity: 1;
-    transform: translateX(0rem);
-  }
-}
 @keyframes leftToRight {
   0% {
     opacity: 0;
@@ -58,19 +36,6 @@ body {
   }
   80% {
     transform: translateX(1rem);
-  }
-  100% {
-    opacity: 1;
-    transform: translateX(0rem);
-  }
-}
-@-webkit-keyframes rightToLeft {
-  0% {
-    opacity: 0;
-    transform: translateX(10rem);
-  }
-  80% {
-    transform: translateX(-1rem);
   }
   100% {
     opacity: 1;
@@ -110,16 +75,11 @@ body {
   letter-spacing: 1rem;
   text-transform: uppercase;
   margin-bottom: 1rem;
-  -webkit-animation-name: leftToRight;
-          animation-name: leftToRight;
-  -webkit-animation-duration: 2s;
-          animation-duration: 2s;
-  -webkit-animation-timing-function: ease;
-          animation-timing-function: ease;
-  -webkit-animation-delay: 1s;
-          animation-delay: 1s;
-  -webkit-backface-visibility: hidden;
-          backface-visibility: hidden;
+  animation-name: leftToRight;
+  animation-duration: 2s;
+  animation-timing-function: ease;
+  animation-delay: 1s;
+  backface-visibility: hidden;
 }
 .title-first__secondary {
   display: block;
@@ -127,16 +87,11 @@ body {
   font-size: 4rem;
   line-height: 4.8rem;
   letter-spacing: 0.5rem;
-  -webkit-animation-name: rightToLeft;
-          animation-name: rightToLeft;
-  -webkit-animation-duration: 2s;
-          animation-duration: 2s;
-  -webkit-animation-timing-function: ease;
-          animation-timing-function: ease;
-  -webkit-animation-delay: 1s;
-          animation-delay: 1s;
-  -webkit-backface-visibility: hidden;
-          backface-visibility: hidden;
+  animation-name: rightToLeft;
+  animation-duration: 2s;
+  animation-timing-function: ease;
+  animation-delay: 1s;
+  backface-visibility: hidden;
 }
 
 .title-secondary {
@@ -150,8 +105,7 @@ body {
   -webkit-background-clip: text;
   color: transparent;
   transition: all 0.5s;
-  -webkit-backface-visibility: hidden;
-          backface-visibility: hidden;
+  backface-visibility: hidden;
 }
 .title-secondary:hover {
   transform: skewY(2deg) skewX(15deg) scale(1.1);
@@ -244,10 +198,8 @@ body {
   transition: all 0.4s;
 }
 .btn_animation {
-  -webkit-animation: btnToUp 0.5s ease-out 0.7s;
-          animation: btnToUp 0.5s ease-out 0.7s;
-  -webkit-animation-fill-mode: backwards;
-          animation-fill-mode: backwards;
+  animation: btnToUp 0.5s ease-out 0.7s;
+  animation-fill-mode: backwards;
 }
 
 .btn-text:link, .btn-text:visited {
@@ -281,8 +233,7 @@ body {
   box-shadow: 0rem 0.4rem 0.4rem rgba(0, 0, 0, 0.3);
   position: absolute;
   transition: all 0.2s;
-  -webkit-backface-visibility: hidden;
-          backface-visibility: hidden;
+  backface-visibility: hidden;
   outline-offset: 1rem;
 }
 .composition__photo_n1 {
@@ -343,8 +294,7 @@ body {
   top: 0;
   left: 0;
   width: 100%;
-  -webkit-backface-visibility: hidden;
-          backface-visibility: hidden;
+  backface-visibility: hidden;
   box-shadow: 0rem 0.4rem 0.4rem rgba(0, 0, 0, 0.3);
   border-radius: 0.3rem;
   overflow: hidden;
@@ -364,8 +314,7 @@ body {
 }
 .card-tour__img {
   background-blend-mode: hard-light;
-  -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 0 80%);
-          clip-path: polygon(0 0, 100% 0, 100% 100%, 0 80%);
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0 80%);
   height: 21rem;
   border-radius: 0.3rem;
 }
@@ -492,6 +441,26 @@ body {
   filter: blur(0.3rem) brightness(70%);
 }
 
+.bg-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -2;
+}
+
+.bg-gradient {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, rgba(186, 133, 84, 0.7), rgba(0, 0, 0, 0.7));
+  z-index: -1;
+}
+
 .row {
   max-width: 114rem;
   margin: 0 auto;
@@ -540,8 +509,7 @@ body {
   position: relative;
   height: 95vh;
   background: linear-gradient(90deg, rgba(186, 133, 84, 0.7) 0.03%, rgba(0, 0, 0, 0.7) 99.94%), url(../img/header-background.jpg) center/cover no-repeat;
-  -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 0 80%);
-          clip-path: polygon(0 0, 100% 0, 100% 100%, 0 80%);
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0 80%);
 }
 .header__logo {
   position: absolute;
@@ -565,11 +533,11 @@ body {
 
 .section-cards {
   background: linear-gradient(90deg, rgba(186, 133, 84, 0.7) 0.03%, rgba(0, 0, 0, 0.7) 99.94%), url(../img/background-section-two.jpg) center/cover no-repeat;
-  -webkit-clip-path: polygon(0 0, 100% 15%, 100% 100%, 0 85%);
-          clip-path: polygon(0 0, 100% 15%, 100% 100%, 0 85%);
+  clip-path: polygon(0 0, 100% 15%, 100% 100%, 0 85%);
   padding: 21rem 0;
 }
 
 .section-feedBack {
   padding-top: 8rem;
+  position: relative;
 }/*# sourceMappingURL=style.css.map */
