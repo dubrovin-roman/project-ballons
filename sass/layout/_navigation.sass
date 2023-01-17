@@ -1,0 +1,102 @@
+.navigation
+    &__toggle
+        display: none
+    &__button
+        height: 8rem
+        width: 8rem
+        border-radius: 50%
+        position: fixed
+        right: 10rem
+        top: 10rem
+        background: $color-white
+        z-index: 200
+        cursor: pointer
+        text-align: center
+    &__background
+        height: 6rem
+        width: 6rem
+        border-radius: 50%
+        background: radial-gradient($color-brown-light, $color-brown-darck)
+        position: fixed
+        right: 11rem
+        top: 11rem
+        z-index: 100
+        transition: all .7s
+        /* transform: scale(80) */
+    &__nav
+        height: 100vh
+        position: fixed
+        top: 0
+        right: 0
+        z-index: 150
+
+        width: 0
+        opacity: 0
+        transition: all .4s cubic-bezier(0.68, -0.6, 0.32, 1.6)
+    &__list
+        list-style: none
+        position: absolute
+        top: 50%
+        left: 50%
+        transform: translate(-50%, -50%)
+        width: 100%
+    &__list-item
+        text-align: center
+        &:not(:last-child)
+            margin-bottom: 5rem
+    &__item-link
+        &:link, &:visited
+            font-weight: 300
+            text-decoration: none
+            text-transform: uppercase
+            font-size: 4rem
+            color: $color-white
+            letter-spacing: .5rem
+            background: linear-gradient(120deg, transparent 0%, transparent 50%, $color-white 50%)
+            background-size: 230%
+            padding: 1rem 2rem
+            transition: all .5s
+            display: inline-block
+        &:hover, &:active
+            background-position: 100%
+            color: $color-brown-darck
+            transform: translateX(1rem)
+    &__toggle:checked ~ &__background
+        transform: scale(80)
+    &__toggle:checked ~ &__nav
+        width: 100%
+        opacity: 1
+    &__icon
+        position: relative
+        margin-top: 38px
+        &,
+        &::before,
+        &::after
+            width: 30px
+            height: 2px
+            background: $color-black
+            display: inline-block
+        &::before,
+        &::after
+            content: ""
+            position: absolute
+            left: 0
+            transition: all .2s
+        &::before
+            top: -8px
+        &::after
+            top: 8px
+    
+    &__button:hover &__icon::before
+        top: -10px
+    &__button:hover &__icon::after
+        top: 10px
+
+    &__toggle:checked + &__button &__icon
+        background: transparent
+    &__toggle:checked + &__button &__icon::before
+        top: 0
+        transform: rotate(135deg)
+    &__toggle:checked + &__button &__icon::after
+        top: 0
+        transform: rotate(-135deg)
