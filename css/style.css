@@ -205,7 +205,7 @@ body {
   margin-bottom: 8rem;
 }
 
-.btn:link, .btn:visited {
+.btn, .btn:link, .btn:visited {
   text-transform: uppercase;
   text-decoration: none;
   color: #777777;
@@ -219,6 +219,7 @@ body {
   border-radius: 5rem;
   padding: 1.5rem 4rem;
   transition: all 0.3s;
+  border: none;
 }
 .btn:hover {
   transform: translateY(-0.4rem);
@@ -250,6 +251,13 @@ body {
           animation: btnToUp 0.5s ease-out 0.7s;
   -webkit-animation-fill-mode: backwards;
           animation-fill-mode: backwards;
+}
+.btn_color-brown, .btn_color-brown:link, .btn_color-brown:visited {
+  color: #FFFFFF;
+  background: #A14F03;
+}
+.btn_color-brown::after {
+  background: #A14F03;
 }
 
 .btn-text:link, .btn-text:visited {
@@ -529,7 +537,10 @@ body {
   padding-left: 5rem;
 }
 .form__group:not(:last-child) {
-  margin-bottom: 3rem;
+  margin-bottom: 2rem;
+}
+.form__group:nth-child(4) {
+  margin-bottom: 4rem;
 }
 .form__label {
   font-size: 1.6rem;
@@ -538,7 +549,7 @@ body {
   display: block;
   margin-top: 1rem;
   margin-left: 1.5rem;
-  transition: all 0.7s;
+  transition: all 0.3s;
 }
 .form__input {
   font-weight: 400;
@@ -550,7 +561,7 @@ body {
   border-radius: 0.5rem;
   border: none;
   border-bottom: 0.3rem solid transparent;
-  width: 55%;
+  width: 75%;
 }
 .form__input:focus {
   outline: none;
@@ -574,6 +585,48 @@ body {
   opacity: 0;
   visibility: hidden;
   transform: translateY(-2rem);
+}
+.form__group-radio {
+  width: 45%;
+  display: inline-block;
+}
+.form__input-radio {
+  display: none;
+}
+.form__label-radio {
+  font-size: 1.6rem;
+  font-weight: 400;
+  letter-spacing: 0.2rem;
+  cursor: pointer;
+  position: relative;
+  padding-left: 3.5rem;
+}
+.form__button-radio {
+  height: 3rem;
+  width: 3rem;
+  border-radius: 50%;
+  border: 0.5rem solid #A14F03;
+  display: block;
+  position: absolute;
+  left: 0rem;
+  top: -0.5rem;
+}
+.form__button-radio::after {
+  content: "";
+  height: 1.5rem;
+  width: 1.5rem;
+  border-radius: 50%;
+  display: block;
+  background: #A14F03;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+  transition: all 0.2s;
+}
+.form__input-radio:checked ~ .form__label-radio .form__button-radio::after {
+  opacity: 1;
 }
 
 .row {
