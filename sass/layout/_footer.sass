@@ -16,6 +16,9 @@
             transform: rotate(5deg) scale(1.2)
         &:not(:last-child)
             margin-right: 5rem
+        @include respond(tab-land)
+            &:not(:last-child)
+                margin-right: 1.6rem
     &__item-link
         &:link, &:visited
             text-decoration: none
