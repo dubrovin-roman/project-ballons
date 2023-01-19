@@ -441,7 +441,7 @@ body {
 }
 @media (max-width: 900px) {
   .card-tour {
-    height: 60rem;
+    height: auto;
   }
 }
 .card-tour__side {
@@ -460,18 +460,39 @@ body {
 }
 @media (max-width: 900px) {
   .card-tour__side {
-    height: 60rem;
+    height: auto;
+    position: relative;
   }
 }
 .card-tour__side_front {
   background: #FFFFFF;
 }
+@media (max-width: 900px) {
+  .card-tour__side_front {
+    padding-bottom: 13rem;
+  }
+}
 .card-tour__side_back {
   background: linear-gradient(120deg, #ba8554 0.03%, #a14f03 99.94%);
   transform: rotateY(180deg);
 }
+@media (max-width: 900px) {
+  .card-tour__side_back {
+    transform: rotateY(0deg);
+    padding: 5rem;
+    -webkit-clip-path: polygon(0 0, 100% 20%, 100% 100%, 0 100%);
+            clip-path: polygon(0 0, 100% 20%, 100% 100%, 0 100%);
+    padding-top: 12rem;
+    margin-top: -11rem;
+  }
+}
 .card-tour:hover .card-tour__side_front {
   transform: rotateY(-180deg);
+}
+@media (max-width: 900px) {
+  .card-tour:hover .card-tour__side_front {
+    transform: rotateY(0deg);
+  }
 }
 .card-tour:hover .card-tour__side_back {
   transform: rotateY(0deg);
@@ -569,6 +590,15 @@ body {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+}
+@media (max-width: 900px) {
+  .card-tour__backSide-box {
+    position: relative;
+    top: 0%;
+    left: 0%;
+    transform: translate(0%, 0%);
+    text-align: center;
+  }
 }
 .card-tour__text {
   margin-bottom: 8rem;
