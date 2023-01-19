@@ -3,7 +3,7 @@
     perspective: 150rem
     -moz-perspective: 150rem
     position: relative
-    @include respond(tab-port)
+    @media only screen and (max-width: 900px), (hover:none)
         height: auto
     &__side
         height: 50rem
@@ -17,17 +17,17 @@
         box-shadow: $box-shadow
         border-radius: .3rem
         overflow: hidden
-        @include respond(tab-port)
+        @media only screen and (max-width: 900px), (hover:none)
             height: auto
             position: relative
         &_front
             background: $color-white
-            @include respond(tab-port)
+            @media only screen and (max-width: 900px), (hover:none)
                 padding-bottom: 13rem
         &_back
             background: linear-gradient(120deg, rgba($color-brown-light, 1) 0.03%, rgba($color-brown-darck, 1) 99.94%)
             transform: rotateY(180deg)
-            @include respond(tab-port)
+            @media only screen and (max-width: 900px), (hover:none)
                 transform: rotateY(0deg)
                 padding: 5rem
                 clip-path: polygon(0 0, 100% 20%, 100% 100%, 0 100%)
@@ -44,7 +44,7 @@
         clip-path: polygon(0 0, 100% 0, 100% 100%, 0 80%)
         height: 21rem
         border-radius: .3rem
-        @include respond(tab-port)
+        @media only screen and (max-width: 900px), (hover:none)
             height: 30rem
         &_1
             background: $color-brown-light url(../img/tour-card-1.jpg) center / cover no-repeat
@@ -103,7 +103,7 @@
         top: 50%
         left: 50%
         transform: translate(-50%, -50%)
-        @include respond(tab-port)
+        @media only screen and (max-width: 900px), (hover:none)
             position: relative
             top: 0%
             left: 0%
