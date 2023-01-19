@@ -1,6 +1,8 @@
 .section-about
     padding-top: 8rem
     margin-bottom: 5rem
+    @include respond(tab-port)
+        margin-bottom: 40rem
 
 .section-cards
     background: linear-gradient(90deg, rgba($color-brown-light, 0.7) 0.03%, rgba($color-black, 0.7) 99.94%), url(../img/background-section-two.jpg) center / cover no-repeat
@@ -14,3 +16,5 @@
 .section-book
     padding: 10rem
     background: linear-gradient(90deg,$color-brown-light, $color-brown-darck)
+    @include respond(tab-port)
+        padding: 6rem

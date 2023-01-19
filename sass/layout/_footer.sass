@@ -1,7 +1,10 @@
 .footer
     padding-top: 8rem
-    min-height: 40rem
+    padding-bottom: 5rem
     background: #333333
+    @include respond(tab-port)
+        padding-top: 4rem
+        padding-bottom: 2rem
     &__logo
         height: 15rem
         width: 12rem
@@ -10,6 +13,9 @@
         list-style: none
         display: flex
         justify-content: center
+        @include respond(tab-port)
+            flex-direction: column
+            text-align: center
     &__list-item
         transition: all .3s
         &:hover
@@ -19,6 +25,10 @@
         @include respond(tab-land)
             &:not(:last-child)
                 margin-right: 1.6rem
+        @include respond(tab-port)
+            margin-right: 0rem !important
+            &:not(:last-child)
+                margin-bottom: 2rem
     &__item-link
         &:link, &:visited
             text-decoration: none
@@ -27,5 +37,7 @@
             font-size: 1.6rem
             letter-spacing: .2rem
             color: $color-white
+            @include respond(tab-port)
+                font-size: 3rem
         &:hover
             color: $color-brown-darck

@@ -2,6 +2,8 @@
     max-width: $grid-width
     @include respond(tab-land)
         max-width: 90.1rem
+    @include respond(tab-port)
+        max-width: 60rem
     margin: 0 auto
     &:not(:last-child)
         margin-bottom: $margin-vertical-big
@@ -33,6 +35,10 @@
     float: left
     &:not(:last-child)
         margin-right: $gutter-horizontal
-        @include respond(tab-land)
-            &:not(:last-child)
-                margin-right: 2rem
+    @include respond(tab-land)
+        &:not(:last-child)
+            margin-right: 2rem
+    @include respond(tab-port)
+        width: 100%
+        margin-right: 0rem !important
+        margin-bottom: 4rem
